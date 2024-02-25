@@ -1,4 +1,9 @@
 /* index.html */
+* {
+    margin: 0;
+    padding: 0;
+}
+
 header {
     background-color: #333;
     padding: 20px;
@@ -72,6 +77,9 @@ nav a {
 }
 
 .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #333;
     padding: 20px;
     margin: 0px;
@@ -140,3 +148,86 @@ nav a {
 }
 
 /* contact.html */
+.contact-info {
+    display: flex;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.contact-method {
+    background-color: #ddd;
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.contact-method a:hover {
+    color: #007BFF;
+}
+
+/* login.html */
+.login-form {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    align-self: center;
+}
+.login-form label {
+    margin: 10px;
+    text-align: center;
+    padding-right: 120px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    align-self: center;
+    padding-left: 75px;
+    margin-top: 0px;
+}
+
+.login-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    border-color: #4CAF50;
+    cursor:pointer;
+    opacity: 0.5;
+}
+.login-btn:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+    opacity: 1;
+}
+.login-form a {
+    color: #007BFF;
+    margin: 10px;
+    text-decoration: none;
+}
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+.login-form p {
+    text-align: center;
+    padding-left: 75px;
+}
