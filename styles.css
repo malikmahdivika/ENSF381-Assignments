@@ -11,6 +11,7 @@ header {
     display: flex;
     justify-content: space-between;
 }
+
 .logo {
     width: 100px;
     height: 100px;
@@ -76,16 +77,27 @@ nav a {
     letter-spacing: 0.5px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 .footer {
-    position: fixed;
+    position: sticky;
+    margin-top: auto;
     bottom: 0;
-    width: 100%;
     background-color: #333;
     padding: 20px;
     margin: 0px;
-    display: flex;
     color: white;
+    display: flex;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 /* products.html */
