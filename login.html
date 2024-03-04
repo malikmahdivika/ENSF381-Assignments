@@ -29,7 +29,7 @@
 
     <main>
         <section class="login-form">
-            <form action="#" method="post">
+            <form id="webForm"> 
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required placeholder="Enter your username">
 
@@ -37,16 +37,21 @@
                 <div class="flex-row">
                     <input type="password" id="password" name="password" required placeholder="Enter your password">
 
-                    <button type="submit" class="login-btn">Login</button>
+                    <button type="submit" class="login-btn" onclick="validateLogin()">Login</button>
                 </div>
                 <p>Don't have an account? <a href="signup.html" class="signup-link">Sign up here</a>.</p>
             </form>
+            
            
         </section>
+        <div class="login-message">
+            <p id="login_message"></p>
+        </div>
     </main>
 
     <footer class="footer">
         <p>&copy; 2024 CatWalk. All rights reserved.</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

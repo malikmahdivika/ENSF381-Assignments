@@ -34,5 +34,30 @@ function removeFromCart(item_id) {
         list = document.getElementById("product-list");
         list.removeChild(item_check)
     }
+}
 
+async function validateLogin() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var message = document.getElementById("login_message");
+    var form = document.getElementById("webForm")
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+    });
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        const users = await response.json();
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].username = username && users[i].email == password) {
+                message.innerHTML = "Login Successful";
+                break;
+            } else {
+                message.innerHTML = "Invalid username or password";
+            }
+        }
+    } 
+    catch(error) {
+        console.log(error);
+    }
 }
