@@ -99,4 +99,7 @@ function validateSignup() {
     if (message.innerHTML === "") {
         message.innerHTML = "Signup successful!";
     }
+    // This code is faulty due to the logic regarding short-circuit-validation not properly testing ALL conditions
+    // The trivial fix involves seperating each validation as a seperate if statement, but I wonder if there is a better way.
+    // Either way, pls fix T_T
 }
