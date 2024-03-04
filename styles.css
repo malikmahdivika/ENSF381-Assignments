@@ -232,12 +232,20 @@ main {
     padding-right: 120px;
 }
 
+#confirm-password-label{
+    padding-left: 60px;
+}
+
+#email-label {
+    margin-right: 30px;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
     margin: 10px;
     align-self: center;
-    padding-left: 75px;
+    padding-left: 82px;
     margin-top: 0px;
 }
 

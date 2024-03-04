@@ -61,3 +61,7 @@ async function validateLogin() {
         console.log(error);
     }
 }
+
+function validateSignup() {
+    
+}
