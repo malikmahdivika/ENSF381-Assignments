@@ -40,7 +40,7 @@ async function validateLogin() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     var message = document.getElementById("login_message");
-    var form = document.getElementById("webForm")
+    var form = document.getElementById("webForm");
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -63,5 +63,40 @@ async function validateLogin() {
 }
 
 function validateSignup() {
-    
+    var message = document.getElementById("login_message");
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm-password").value;
+    var email = document.getElementById("email").value;
+    var form = document.getElementById("webForm");
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+    });
+
+    // Clear the message first
+    message.innerHTML = "";
+
+    // Check username
+    if (username.length < 3 || username.length > 20 || !/^[a-zA-Z]/.test(username) || !/^[a-zA-Z0-9-_]+$/.test(username)) {
+        message.innerHTML += "Invalid username.<br>";
+    }
+
+    // Check password
+    if (password.length < 8 || !/[a-z]/.test(password) || !/[0-9]/.test(password) || !/[!@#$%^&*()-_=+\[\]{}|;:'",.<>?/`~]/.test(password) || /\s/.test(password)) {
+        message.innerHTML += "Invalid password.<br>";
+    }
+
+    //confirm password
+    if (password !== confirmPassword) {
+        message.innerHTML += "Password does not match.<br>"
+    }
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        message.innerHTML += "Invalid email.";
+    }
+
+    // If no errors, show success message
+    if (message.innerHTML === "") {
+        message.innerHTML = "Signup successful!";
+    }
 }
