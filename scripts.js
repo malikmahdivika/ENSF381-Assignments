@@ -96,29 +96,34 @@ function validateSignup() {
         event.preventDefault();
     });
 
+    // Clears the message first
     message.innerHTML = '';
 
     // Array to store error messages
     var errors = [];
 
+    // Validate username
     if (!usernameRegex.test(username)) {
         errors.push('Invalid username');
     }
 
+    // Validate password
     if (!passwordRegex.test(password)) {
         errors.push('Invalid password');
     }
 
+    // Validate confirm password
     if (password !== confirmPassword) {
         errors.push('Passwords do not match');
     }
 
+    // Validate email
     if (!emailRegex.test(email)) {
         errors.push('Invalid email address');
     }
 
+    // If there are errors, display them
     if (errors.length > 0) {
-        // If there are errors, display them
         showMessage(errors.join('<br>'));
     } else {
         // If no errors, show success message
@@ -130,6 +135,7 @@ function showMessage(msg, type = 'error') {
     var message = document.getElementById("login_message");
     message.innerHTML = msg;
 
+    // Set color properties based on type
     if (type === 'error') {
         message.style.border = '2px solid #ffaaaa';
         message.style.backgroundColor = '#ffebee';
