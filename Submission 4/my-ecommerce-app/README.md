@@ -81,4 +81,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     "web-vitals": "^2.1.4"
   }
 
-No extra dependencies from app creation, no install commands necessary.
+No extra dependencies from app creation, no install commands necessary. Will be updated on a need basis.
