@@ -11,7 +11,7 @@ const Homepage = () => {
         <Routes>
             <Route path="/" />
             <Route path="/products" />
-            <Route path="/about" />
+            <Route path="/about" /> {/*Fix links on product page implementation.*/}
         </Routes>
         <HomeMainSection />
         <Footer />
