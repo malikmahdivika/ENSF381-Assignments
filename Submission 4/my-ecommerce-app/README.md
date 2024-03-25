@@ -77,8 +77,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   }
 
-No extra dependencies from app creation, no install commands necessary. Will be updated on a need basis.
+npm install react-router-dom
