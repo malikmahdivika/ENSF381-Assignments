@@ -1,11 +1,11 @@
 import React from 'react';
 import reviews from '../data/reviews.js';
 
-const styles = {}
+
 
 function HomeMainSection() {
     return (
-        <div styles={styles.HomeMainSection}>
+        <div>
             <h2>About Us</h2>
             <p>Welcome to our online store! We are passionate about providing high-quality
             products and exceptional customer service. Learn more about our story and commitment to
