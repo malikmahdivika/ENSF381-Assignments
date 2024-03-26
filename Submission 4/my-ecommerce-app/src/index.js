@@ -1,3 +1,7 @@
+// Authors: 
+// Al Malik Mahdivika 30196233
+// Kareem Hussein *UCID HERE*
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
