@@ -33,7 +33,7 @@ function Header() {
                 <Link to="/products">Products</Link>
             </div>
             <div className="link">
-                <Link to="/about">About</Link>
+                <Link to="/login">Login</Link>
             </div>
         </div>
         </div>
