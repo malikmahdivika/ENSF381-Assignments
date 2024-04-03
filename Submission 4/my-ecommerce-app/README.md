@@ -83,3 +83,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
   }
 
 npm install react-router-dom
+
+### In the backend directory
+pip install flask
+pip install flask-cors
+
+note: I had something running on port 3000 so in app.py I set the cors origin to 3001 which might be different on your system

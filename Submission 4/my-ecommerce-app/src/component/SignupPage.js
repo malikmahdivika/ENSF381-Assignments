@@ -1,25 +1,24 @@
 import React from 'react';
 import Header from './Header.js';
+import Signup from './SignupForm.js';
 import Footer from './Footer.js';
-import LoginForm from './LoginForm.js';
 import { useNavigate } from 'react-router-dom';
 
-
-const LoginPage = () => {   
+const SignupPage = () => {
     const navigate = useNavigate();
 
     const switchForm = () => {
-        navigate('/signup');
+        navigate('/login');
     };
 
     return (
         <div>
             <Header />
-            <LoginForm />
-            <button onClick={switchForm}>Switch to Signup</button>
+            <Signup />
+            <button onClick={switchForm}>Switch to Login</button>
             <Footer />
         </div>
     );
 };
 
-export default LoginPage;
+export default SignupPage;
