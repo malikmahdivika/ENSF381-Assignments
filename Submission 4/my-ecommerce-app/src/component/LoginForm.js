@@ -2,6 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+const styles = {
+    alertmessage: {
+        background: '#D3D3D3'
+    }
+}
+
 function LoginForm() {
     const navigate = useNavigate();
 
@@ -25,7 +31,8 @@ function LoginForm() {
             }
         } catch(error) {
             if (error.response) {
-                alert(error.response.data.error);
+                let alert = error.response.data.error;
+                document.getElementById('message').innerHTML = alert;
             } else {
                 console.log(error.message);
             }
@@ -36,6 +43,7 @@ function LoginForm() {
     return (
         <div class="LoginForm">
             <h1>Login</h1>
+            <span id="message" style={styles.alertmessage}></span>
             <form onSubmit={handleSubmit}>
                 <label for="username">Username: </label>
                 <input type="text" id="username" name="username" />

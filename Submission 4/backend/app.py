@@ -17,8 +17,10 @@ def signup():
     username = data.get('username')
     password = data.get('password')
     confirm_password = data.get('confirm-password')
+    email = data.get('email')
     
-
+    if not username or not password or not confirm_password or not email:
+        return jsonify({'error': 'Please provide all required fields'}), 400
     if any(user['username'] == username for user in users):
         return jsonify({'error': 'Username already exists, please use another username'}), 400
     if password != confirm_password:
@@ -27,7 +29,7 @@ def signup():
     user = {
         'username': username,
         'password': password,
-        'email': data.get('email')
+        'email': email
     }
 
     users.append(user)
@@ -40,6 +42,8 @@ def login():
     username = data.get('username')
     password = data.get('password')
     
+    if not username or not password:
+        return jsonify({'error': 'Please provide all required fields', 'isLogin': False}), 400
     user = next((user for user in users if user['username'] == username), None)
     if user is None:
         return jsonify({'error': 'User not found','isLogin': False}), 404
