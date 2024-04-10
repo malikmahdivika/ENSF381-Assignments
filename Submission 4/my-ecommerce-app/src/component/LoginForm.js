@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from './LoginContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
 const styles = {
     alertmessage: {
         background: '#D3D3D3'
     }
 }
 
+
+
 function LoginForm() {
+    const { setIsLoggedIn } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
@@ -26,6 +29,7 @@ function LoginForm() {
             const response = await axios.post('http://127.0.0.1:5000/login', user);
             console.log(response.data.message);
             if (response.data.isLogin) {
+                setIsLoggedIn(true);
                 alert('Login successful');
                 navigate('/products');
             }

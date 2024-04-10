@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import ProductList from './ProductList';
 import Cart from './Cart';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './LoginContext';
 
 function Productpage() {
     const [cartItems, setCartItems] = useState([]);
+    const { isLoggedIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            navigate('/login');
+        }
+    }, [isLoggedIn, navigate]);
+
     useEffect(() => {
         const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         setCartItems(storedCartItems);
